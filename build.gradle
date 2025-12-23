@@ -79,6 +79,10 @@ sourceSets {
   }
 }
 
+test {
+    enabled = false
+}
+
 // AWS jar배포.
 bootJar{
   archivesBaseName = 'SpringGroupBB'

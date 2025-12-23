@@ -56,17 +56,6 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     #
 
-  # test db분리
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-
   # Security User Password Setting (Security Login Info Setting)
   security:
     user:
