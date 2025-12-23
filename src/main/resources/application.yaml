@@ -1,7 +1,6 @@
 # server port : 9099
 server:
   port: 9099
-  address: 0.0.0.0
   servlet:
     context-path: /SpringGroupBB
 
@@ -9,6 +8,13 @@ server:
 spring:
   application:
     name: SpringGroupBB
+
+  # DOCKER
+  docker:
+    compose:
+      skip:
+        in-tests: false
+  #
 
   devtools:
     restart:
@@ -28,16 +34,27 @@ spring:
 
   # JPA Setting
   jpa:
-    open-in-view: true
+#    open-in-view: true
+#    hibernate:
+#      ddl-auto: update  # create, update, none, create-drop, validate...
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+#    show-sql: false # SQL Log Display Setting
+#    properties:
+#      hibernate:
+#        format_sql: true # SQL Log Display Setting
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
+    #DOCKER
     hibernate:
-      ddl-auto: update  # create, update, none, create-drop, validate...
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
-    show-sql: false # SQL Log Display Setting
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
     properties:
       hibernate:
-        format_sql: true # SQL Log Display Setting
+        format_sql: true
+    database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
+    #
 
   # Security User Password Setting (Security Login Info Setting)
   security:

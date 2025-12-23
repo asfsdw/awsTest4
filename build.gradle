@@ -7,7 +7,7 @@ buildscript {
 
 plugins {
 	id 'java'
-	id 'war'
+//	id 'war'
 	id 'org.springframework.boot' version '3.5.7'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
@@ -53,7 +53,7 @@ dependencies {
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   runtimeOnly 'com.mysql:mysql-connector-j'
   annotationProcessor 'org.projectlombok:lombok'
-  providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+//  providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
   testImplementation 'org.springframework.security:spring-security-test'
   testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -77,6 +77,13 @@ sourceSets {
       srcDirs = ["$projectDir/src/main/java", "$projectDir/build/generated"]
     }
   }
+}
+
+// AWS jar배포.
+bootJar{
+  archivesBaseName = 'SpringGroupBB'
+  archiveFileName = 'SpringGroupBB.jar'
+  archiveVersion = "0.0.1"
 }
 
 compileJava.dependsOn('clean')
