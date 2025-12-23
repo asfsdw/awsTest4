@@ -28,7 +28,7 @@ spring:
   # DataBase Setting(Datasource)
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springgroupbb
+    url: jdbc:mysql://localhost:3306/seoul
     username: root
     password: 1234
 
